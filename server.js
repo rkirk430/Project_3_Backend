@@ -24,7 +24,7 @@ const { response } = require("express");
 //==========================================
 
 // Establish Connection
-mongoose.connect(MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI || "localhost:4000");
 
 // Connection Events
 mongoose.connection
@@ -121,4 +121,4 @@ app.get("/stocks", async (req, res) => {
 ///////////////////////////////
 // LISTENER
 ////////////////////////////////
-app.listen(PORT, () => console.log(`listening on PORT ${PORT}`)); //"Port Working"
+app.listen(process.env.PORT || 4000)
