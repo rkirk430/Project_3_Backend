@@ -2,7 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 
-const data = require("./data.json");
+const lastPrice = require("./lastprice.json");
 const government = require("./government.json");
 const sentiment = require("./sentiment.json");
 
@@ -15,8 +15,8 @@ app.use(cors());
 // app.use(express.json()); // parse json bodies
 
 // Route for Retrieving data in data.json
-app.get("/data", (req, res) => {
-    res.json(data);
+app.get("/lastprice", (req, res) => {
+    res.json(lastPrice);
 });
 
 // Route for Retrieving government in government.json
