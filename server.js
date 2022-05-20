@@ -15,17 +15,17 @@ app.get("/", (req, res) => {
 });
 
 //People index Route//////
-app.get("/stocks", async (req, res) => {
-    try {
-        const response = await fetch("https://apewisdom.io/api/v1.0/filter/all-stocks/page/4");
-        const data = await response.json();
-        // console.log(data);
-        response.json(data);   //data.results
-    } catch (error) {
-      //send error
-        res.status(400).json(error);
-    }
-});
+// app.get("/stocks", async (req, res) => {
+//     try {
+//         const response = await fetch("https://apewisdom.io/api/v1.0/filter/all-stocks/page/4");
+//         const data = await response.json();
+//         // console.log(data);
+//         response.json(data);   //data.results
+//     } catch (error) {
+//       //send error
+//         res.status(400).json(error);
+//     }
+// });
 
 
 //People index Route//////
@@ -41,17 +41,17 @@ app.post("/stocks", async (req, res) => {
     }
 });
 
-app.get("/reddit", async (req, res) => {
-    try {
-        const response = await fetch("https://tradestie.com/api/v1/apps/reddit");
-        const data = await response.json();
-        // console.log(data);
-        response.json(data);   //data.results
-    } catch (error) {
-      //send error
-        res.status(400).json(error);
-    }
-});
+// app.get("/reddit", async (req, res) => {
+//     try {
+//         const response = await fetch("https://tradestie.com/api/v1/apps/reddit");
+//         const data = await response.json();
+//         // console.log(data);
+//         response.json(data);   //data.results
+//     } catch (error) {
+//       //send error
+//         res.status(400).json(error);
+//     }
+// });
 
 app.post("/reddit", async (req, res) => {
     try {
