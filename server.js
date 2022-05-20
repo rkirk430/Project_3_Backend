@@ -27,6 +27,20 @@ app.get("/stocks", async (req, res) => {
     }
 });
 
+
+//People index Route//////
+app.post("/stocks", async (req, res) => {
+    try {
+        const response = await fetch("https://apewisdom.io/api/v1.0/filter/all-stocks/page/4");
+        const data = await response.json();
+        // console.log(data);
+        response.json(data);   //data.results
+    } catch (error) {
+      //send error
+        res.status(400).json(error);
+    }
+});
+
 app.get("/reddit", async (req, res) => {
     try {
         const response = await fetch("https://tradestie.com/api/v1/apps/reddit");
@@ -38,6 +52,21 @@ app.get("/reddit", async (req, res) => {
         res.status(400).json(error);
     }
 });
+
+app.post("/reddit", async (req, res) => {
+    try {
+        const response = await fetch("https://tradestie.com/api/v1/apps/reddit");
+        const data = await response.json();
+        // console.log(data);
+        response.json(data);   //data.results
+    } catch (error) {
+      //send error
+        res.status(400).json(error);
+    }
+});
+
+
+
 
 //Declare Port Number
 const PORT = process.env.PORT || 4020;
