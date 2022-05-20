@@ -7,6 +7,7 @@ const app = express();
 
 //Step 4: Create Middleware
 app.use(cors());
+app.use(express.json()); // parse json bodies
 
 
 app.get("/", (req, res) => {
