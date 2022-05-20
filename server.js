@@ -19,8 +19,8 @@ app.get("/stocks", async (req, res) => {
     try {
         const response = await fetch("https://apewisdom.io/api/v1.0/filter/all-stocks/page/4");
         const data = await response.json();
-        console.log(data);
-        // res.json(data);   //data.results
+        // console.log(data);
+        res.json(data);   //data.results
     } catch (error) {
       //send error
         res.status(400).json(error);
@@ -30,5 +30,5 @@ app.get("/stocks", async (req, res) => {
 //Declare Port Number
 const PORT = process.env.PORT || 4020;
 
-//Turn on the Server Listener
+//Turn on the Server Listener////
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
