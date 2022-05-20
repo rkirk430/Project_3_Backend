@@ -27,6 +27,18 @@ app.get("/stocks", async (req, res) => {
     }
 });
 
+app.get("/reddit", async (req, res) => {
+    try {
+        const response = await fetch("https://tradestie.com/api/v1/apps/reddit");
+        const data = await response.json();
+        // console.log(data);
+        res.json(data);   //data.results
+    } catch (error) {
+      //send error
+        res.status(400).json(error);
+    }
+});
+
 //Declare Port Number
 const PORT = process.env.PORT || 4020;
 
